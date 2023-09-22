@@ -1,13 +1,69 @@
-## Task instructions for DevOps Intern Role
+# Ignite DevOps Intern Task
 
-### Setup a kubernetes cluster using kind 
-1. Write a simple bash script that deploys a [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)  cluster locally
-2. Download the kubeconfig for the cluster and store in kinda safe place, we will use it much later in the next steps
+## Setup
+1. Clone this repository
+    ```
+    git clone https://github.com/oyoh-edmond/Devops-intern-task.git
+    ```
 
-### Deploy a sample Node.js app using terraform
+2. Navigate into the repo directory (folder)
+    ```
+    cd Devops-intern-task
+    ```
 
-1. When kind is up and running, dockerize a simple hello world [express](https://expressjs.com/en/starter/hello-world.html) and deploy to dockerhub
-2. create a kubernetes deployment manifest to deploy to deploy the Node.js to the kind cluste but don't apply it yet
+3. Create a Kind cluster by exectuing the following script
+    ```
+    ./KIND_cluster.sh
+    ```
+    The result will be that a new Kind cluster has been created.
+
+
+4. Grab the kubeconfig file by running the following command
+    ```
+    kind get kubeconfig --name ignite-app > kubeconfig.yaml
+    ```
+    The command above saves the kubeconfig to a file named `kubeconfig.yaml`
+
+5. Install the node application dependencies by running the following command in the `node_application`` directory
+    
+    ```
+    cd node_application && npm i
+    ```
+    `Note`: You can test the application by simply executing `node index.js` within the node_application dir
+
+6. Build and deploy a docker image to dockerhub from the node_app dir
+    ```
+    docker buildx build . -t <dockerhub-username>/<image-name>
+    ```
+    For example: `docker buildx build . -t oyohedmond/ignite-app`
+    Once that is done, login to dockerhub and verify that it exists
+
+7. Navigate to the terraform directory and execute the following commands:
+    
+    a. Init 
+    ```
+    terraform init
+    ```
+
+    b. Plan
+    ```
+    terraform plan
+    ```
+    
+    b. Apply
+    ```
+    terraform apply
+    ```
+    
+
+
+
+
+
+
+
+
+
 3. using the [kubectl terraform provider](https://registry.terraform.io/providers/gavinbunney/kubectl/latest/docs), write a terraform code to deploy the kubectl manifest to the kind cluster 
 
 ### Bonus
