@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the name of your KIND cluster
-CLUSTER_NAME="myCluster"
+CLUSTER_NAME="ignite-app"
 
 # Check if KIND is installed
 if ! command -v kind &>/dev/null; then

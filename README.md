@@ -19,4 +19,3 @@
 1. Create a repository with all your code in it
 2. Send an email to intern.task@ignite.dev on or before 23/09/2023
    
-``
