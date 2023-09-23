@@ -9,7 +9,7 @@ terraform {
 
 provider "kubectl" {
   # Configuration options
-  Config_path = "../kubeconfig.yaml"
+  config_path = "../kubeconfig.yaml"
 }
 
 resource "kubectl_manifest" "deploy" {

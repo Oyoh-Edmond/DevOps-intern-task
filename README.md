@@ -64,7 +64,6 @@
 
 
 
-3. using the [kubectl terraform provider](https://registry.terraform.io/providers/gavinbunney/kubectl/latest/docs), write a terraform code to deploy the kubectl manifest to the kind cluster 
 
 ### Bonus
 
