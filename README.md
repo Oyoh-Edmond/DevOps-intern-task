@@ -64,13 +64,3 @@
 
 
 
-
-### Bonus
-
-1. Using the [kube-prometheus stack](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md), using [terraform helm provider](https://registry.terraform.io/providers/hashicorp/helm/latest/docs), setup monitoring and observability for the prometheus cluster.
-
-### Submission
-
-1. Create a repository with all your code in it
-2. Send an email to intern.task@ignite.dev on or before 23/09/2023
-   
